@@ -4,12 +4,10 @@ class Player {
         // this.velocity = 0
         this.width = 100;
         this.height = 110;
-        this.x = 200;
+        this.x = 600;
         this.y = 900 - this.height;
-        this.laser = image
-        this.laserX = 250;
-        this.laserY = 80;
-
+        this.score = 0;
+        this.lose = false;
 
     }
 
@@ -20,39 +18,42 @@ class Player {
         if (this.x <= 0){
             this.x = 0;
         }
-        if (this.x >= 400){
-            this.x = 400;
+        if (this.x >= 1100){
+            this.x = 1100;
         }
         image(game.playerImage, this.x, this.y, this.width, this.height)
 
         if (keyIsDown(39)){
-            this.x += 5;
+            this.x += 4;
         }
         if (keyIsDown(37)){
-            this.x -= 5;
+            this.x -= 4;
         }
         if (keyIsDown(38)){
-            this.y -= 5;
+            this.y -= 4;
         }
         if (keyIsDown(40)){
-            this.y += 5;
+            this.y += 4;
         }
-        // keyPressed() 
-        // if (keyCode === 32){
-        // image(game.shotImage, this.laserX, this.laserY, 15, 40)
-        // } 
-        // this.laserY -= 5
- 
+        fill(255); 
+        textSize(30);
+        text('Score:', 1000, 50)
+         text(this.score, 1100, 50)
 
-        // function keyPressed(){ 
-        //     if (keyCode === 32){
-        //     image(game.shotImage, 100,100,15,40 )
+        
+        //  if (this.lose = true){
+        //      noLoop();
         //  }
-        // }
+        //  if (lives<=0)
+        //  {
+        //    lose = true;
+        //    noLoop();
+        //    textSize(20);
+        //    text("Click to Restart", 125,100);
+        //    textSize(13);
+        //  }
     }
 
-    // shoot -> when press key then shoots straight
-    // when player moves blast starts where player is
 
 
 }

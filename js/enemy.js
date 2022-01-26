@@ -2,9 +2,11 @@ class Enemy {
   constructor(image){
       this.image = image
       this.x = (Math.random() * width)
-      this.y = 0
+      this.y = -50
       this.width = 80
       this.height = 100
+    //   let lose = false;
+      // velocity 
   }
 
   collision(playerInfo) {
@@ -16,20 +18,25 @@ class Enemy {
 		if (dist(enemyX, enemyY, playerX, playerY) > 50) {
 			return false
 		} else {
-      this.gameOver = true
+            game.player.score -= 50
+            return true
 		}
+
 	}
 
   draw(){
-  if (this.x <= 0){
+    if (this.x <= 0){
       this.x = 0;
-  }
-  if (this.x >= 400){
-      this.x = 420;
-  }
+    }
+    if (this.x >= 1100){
+      this.x = 1120;
+    }
       this.y++
       image(this.image, this.x, this.y, this.width, this.height)
 
+    if (this.lives <= 0) {
+        noLoop();
+    }
       
   }
   // loseGame()

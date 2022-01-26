@@ -10,32 +10,26 @@ class Game{
         this.background = new Background ()
         this.enemies = []
         this.enemiesImage 
-        this.shotImage
-        this.laser = []
-        this.gameOver = false;
+        this.obstacles = []
+        this.dragonballImage
+        this.meteorites = []
+        this.meteoriteImage
 
 
     }
 
     preload(){
         this.backgroundImage = [
-            {src: loadImage('/Assets/star.png'), y: 10, speed: 7},
+            {src: loadImage('/Assets/star.png'), y: 10, speed: 8},
         ]
         this.playerImage = loadImage ('/Assets/playershuttle.png')
 
         this.enemiesImage = loadImage ('/Assets/enemyshuttle.png')
 
-        this.shotImage = loadImage ('/Assets/shot.png')
+        this.dragonballImage = loadImage ('/Assets/dragonball.png')
 
-        loseGame() 
-            if(this.gameOver == false) {
-                textSize(40);
-                textAlign(CENTER, CENTER)
-                fill('white');
-                text('GAME OVER', width / 2, height / 2);
-                return;
-              }
-    
+        this.meteoriteImage = loadImage ('/Assets/meteorite.png')
+
     }
 
     draw() {
@@ -43,7 +37,7 @@ class Game{
         this.background.draw()
         this.player.draw()
 
-        if (frameCount % 120 === 0){
+        if (frameCount % 30 === 0){
         this.enemies.push(new Enemy(this.enemiesImage))
         }
 
@@ -60,21 +54,41 @@ class Game{
 
 		})
 
+        if (frameCount % 90 === 0){
+            this.obstacles.push(new Obstacle(this.dragonballImage))
+            }
+    
+        this.obstacles.forEach(function(obstacle) {
+            obstacle.draw()
+        })
+    
+        this.obstacles = this.obstacles.filter(obstacle => {
+        if (obstacle.collision(this.player) || obstacle.x < 0) {
+            return false
+            } else {
+           return true
+            }
+    
+        })
 
-        // if (keyPressed === 32) {
-        // this.laser.push(new Laser(this.shotImage))
-        // }
+        if (frameCount % 390 === 0){
+            this.meteorites.push(new Comet(this.meteoriteImage))
+        }
+        
+        this.meteorites.forEach(function(comet) {
+            comet.draw()
+        })
+        
+        this.meteorites = this.meteorites.filter(comet => {
+            if (comet.collision(this.player) || comet.x < 0) {
+                return false
+            } else {
+                return true
+                    }
+        
+        })
 
-        // this.laser.forEach(function(laser){
-        //     laser.draw()
-        // })
 
-        // this.enemies.forEach(function (enemy) {
-		// 	enemy.draw()
-		// })       
-        // this.enemies = this.enemies.filter((enemy) => {
-        // enemy.collision(this.player)
-        // })
     }
 
 
