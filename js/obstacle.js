@@ -4,7 +4,7 @@ class Obstacle {
         this.x = (Math.random() * width)
         this.y = -30
         this.width = 50
-        this.height = 60
+        this.height = 50
         this.score = 0
     }
   
@@ -17,7 +17,7 @@ class Obstacle {
           if (dist(obstacleX, obstacleY, playerX, playerY) > 50) {
               return false
           } else {
-              game.player.score += 10
+              game.player.score += 20
               console.log(game.player.score)
                 return true
           }

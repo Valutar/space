@@ -22,11 +22,11 @@ class Game{
         this.backgroundImage = [
             {src: loadImage('assets/star.png'), y: 10, speed: 8},
         ]
-        this.playerImage = loadImage ('assets/playershuttle.png')
+        this.playerImage = loadImage ('assets/mastership.png')
 
         this.enemiesImage = loadImage ('assets/enemyshuttle.png')
 
-        this.dragonballImage = loadImage ('assets/dragonball.png')
+        this.dragonballImage = loadImage ('assets/XDZT.gif')
 
         this.meteoriteImage = loadImage ('assets/meteorite.png')
 

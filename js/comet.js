@@ -31,7 +31,7 @@ class Comet{
     if (this.x >= 1050){
         this.x = 1050;
     }
-        this.y+=2
+        this.y+= 7
         image(this.image, this.x, this.y, this.width, this.height)
     }
 
