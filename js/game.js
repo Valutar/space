@@ -14,10 +14,7 @@ class Game{
         this.dragonballImage
         this.meteorites = []
         this.meteoriteImage
-        this.stage = 0;
-        this.screenStart;
-        this.screenPlay;
-        this.screenGameOver;
+
 
     }
 
@@ -25,15 +22,15 @@ class Game{
         this.backgroundImage = [
             {src: loadImage('/assets/star.png'), y: 10, speed: 8},
         ]
-        this.playerImage = loadImage ('/assets/playershuttle.png')
+        this.playerImage = loadImage ('assets/playershuttle.png')
 
-        this.enemiesImage = loadImage ('/assets/enemyshuttle.png')
+        this.enemiesImage = loadImage ('assets/enemyshuttle.png')
 
-        this.dragonballImage = loadImage ('/assets/dragonball.png')
+        this.dragonballImage = loadImage ('assets/dragonball.png')
 
-        this.meteoriteImage = loadImage ('/assets/meteorite.png')
+        this.meteoriteImage = loadImage ('assets/meteorite.png')
 
-        this.screenStart = loadImage ('/assets/moooooon.png')
+        this.screenStart = loadImage ('assets/moooooon.png')
 
     }
 
@@ -92,9 +89,7 @@ class Game{
                     }
         })
 
-        // if (this.stage == 0) {
-        //     image(this.screenStart, this.x,this.y, 100, 100);            
-        // } 
+  
     }
 
     
