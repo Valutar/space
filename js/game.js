@@ -14,7 +14,7 @@ class Game{
         this.dragonballImage
         this.meteorites = []
         this.meteoriteImage
-
+        this.gameoverImage
 
     }
 
@@ -30,7 +30,9 @@ class Game{
 
         this.meteoriteImage = loadImage ('assets/meteorite.png')
 
-        this.screenStart = loadImage ('assets/moooooon.png')
+        this.gameoverImage = loadImage ('assets/gameover.png')
+
+
 
     }
 
@@ -89,9 +91,10 @@ class Game{
                     }
         })
 
-  
+
     }
 
+     
     
 
 }

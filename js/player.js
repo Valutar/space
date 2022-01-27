@@ -1,7 +1,6 @@
 class Player {
 
     constructor(){
-        // this.velocity = 0
         this.width = 100;
         this.height = 110;
         this.x = 600;
@@ -14,7 +13,7 @@ class Player {
     draw() {
         if(this.y >= 800 - this.height){
             this.y = 800 - this.height;
-        } // theo also for top but not necessary
+        }
         if (this.x <= 0){
             this.x = 0;
         }
@@ -39,12 +38,5 @@ class Player {
         textSize(30);
         text('Score:', 1000, 50)
          text(this.score, 1100, 50)
-
-
-    
-        
     }
-
-
-
 }

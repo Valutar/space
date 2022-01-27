@@ -14,16 +14,15 @@ class Comet{
           let playerX = playerInfo.x + playerInfo.width / 2
           let playerY = playerInfo.y + playerInfo.height / 2
           if (dist(meteoriteX, meteoriteY, playerX, playerY) > 50) {
-            // game.player.lose = true
             game.player.lose = false
             console.log(game.player.lose)
           } else {
-            game.player.lose = true
-             noLoop()
-                console.log(game.player.lose)
+            game.player.lose = true 
+            this.losescreen() 
+            noLoop()
+            console.log(game.player.lose)
           } 
-
-        }
+    }
   
     draw(){
     if (this.x <= 0){
@@ -35,6 +34,15 @@ class Comet{
         this.y+=2
         image(this.image, this.x, this.y, this.width, this.height)
     }
-  
-  
+
+    losescreen(){
+        image(game.gameoverImage, 0, -150, 1200, 950);
+        textFont('Impact')
+        stroke('rgb(100%,0%,10%)');
+        strokeWeight(4);
+        fill(255)
+        textSize(80)
+        text(`Score: ${game.player.score}`, 430,630)
+
+    }
 }
