@@ -20,7 +20,7 @@ class Game{
 
     preload(){
         this.backgroundImage = [
-            {src: loadImage('/assets/star.png'), y: 10, speed: 8},
+            {src: loadImage('assets/star.png'), y: 10, speed: 8},
         ]
         this.playerImage = loadImage ('assets/playershuttle.png')
 
