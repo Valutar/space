@@ -18,7 +18,7 @@ class Enemy {
 		if (dist(enemyX, enemyY, playerX, playerY) > 50) {
 			return false
 		} else {
-            game.player.score -= 50
+            game.player.score -= 30
             return true
 		}
 

@@ -15,13 +15,3 @@ class Background{
         })
     }
 }
-
-// class Background{
-//     constructor(){
-
-//     }
-
-//     draw(){
-//         background = (51);
-//     }
-// }

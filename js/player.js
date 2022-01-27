@@ -40,18 +40,9 @@ class Player {
         text('Score:', 1000, 50)
          text(this.score, 1100, 50)
 
+
+    
         
-        //  if (this.lose = true){
-        //      noLoop();
-        //  }
-        //  if (lives<=0)
-        //  {
-        //    lose = true;
-        //    noLoop();
-        //    textSize(20);
-        //    text("Click to Restart", 125,100);
-        //    textSize(13);
-        //  }
     }
 
 

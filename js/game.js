@@ -14,21 +14,26 @@ class Game{
         this.dragonballImage
         this.meteorites = []
         this.meteoriteImage
-
+        this.stage = 0;
+        this.screenStart;
+        this.screenPlay;
+        this.screenGameOver;
 
     }
 
     preload(){
         this.backgroundImage = [
-            {src: loadImage('/Assets/star.png'), y: 10, speed: 8},
+            {src: loadImage('/assets/star.png'), y: 10, speed: 8},
         ]
-        this.playerImage = loadImage ('/Assets/playershuttle.png')
+        this.playerImage = loadImage ('/assets/playershuttle.png')
 
-        this.enemiesImage = loadImage ('/Assets/enemyshuttle.png')
+        this.enemiesImage = loadImage ('/assets/enemyshuttle.png')
 
-        this.dragonballImage = loadImage ('/Assets/dragonball.png')
+        this.dragonballImage = loadImage ('/assets/dragonball.png')
 
-        this.meteoriteImage = loadImage ('/Assets/meteorite.png')
+        this.meteoriteImage = loadImage ('/assets/meteorite.png')
+
+        this.screenStart = loadImage ('/assets/moooooon.png')
 
     }
 
@@ -85,11 +90,14 @@ class Game{
             } else {
                 return true
                     }
-        
         })
 
-
+        // if (this.stage == 0) {
+        //     image(this.screenStart, this.x,this.y, 100, 100);            
+        // } 
     }
 
+    
 
 }
+
